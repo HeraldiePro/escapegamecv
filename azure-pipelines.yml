@@ -1,19 +1,39 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Build ASP.NET Core project using Azure Pipelines
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core?view=vsts
 
-trigger:
-- master
-
+# define the VM image I want to use for my build
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'Ubuntu 16.04'
 
+# define variables to use during the build
+variables:
+  projectFolder: 'src/react'
+  buildOutputFolder: 'src/react/build'
+
+# define the steps of the build
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
+## Run the npm install/build
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    pushd $(projectFolder) && npm install && popd
+    pushd $(projectFolder) && npm run build && popd
+## Copy the client to the staging directory
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: '$(buildOutputFolder)' 
+    contents: '**/*' 
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    cleanTargetFolder: true
+
+## Archive the files into a zip file for publishing
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: $(Build.ArtifactStagingDirectory)
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    includeRootFolder: false
+
+## Publish the zip file
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
