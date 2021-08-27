@@ -1,25 +1,25 @@
-import logo from '../assets/images/logo.svg';
-import '../assets/css/App.css';
+import { ThemeProvider  } from '@material-ui/core/styles';
+import { CssBaseline, Container} from '@material-ui/core';
+import '../assets/font/Adigiana-Toybox-Regular.ttf.eot'
+import StepperContent from '../components/Stepper/Stepper'
+import Footer from './Footer/Footer'
 
-function App() {
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <div className="content">
+          <StepperContent />
+          <Footer />
+        </div>
+      </Container>
+      
+    </ThemeProvider>
+    
+  )
 }
 
 export default App;

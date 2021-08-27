@@ -1,13 +1,37 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Adigiana-Toybox-Regular';
+  src:url('../font/Adigiana-Toybox-Regular.ttf.woff') format('woff'),
+      url('../font/Adigiana-Toybox-Regular.ttf.svg#Adigiana-Toybox-Regular') format('svg'),
+      url('../font/Adigiana-Toybox-Regular.ttf.eot'),
+      url('../font/Adigiana-Toybox-Regular.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family:'Courier New', Courier, monospace;
+  color: '#1A1A1A';
+}
+
+.content {
+  text-align: center;
+}
+
+.MuiPaper-root{
+  background-color: #fafafa !important;
+}
+h1,h2,h3,h4,h5 {
+  font-family: 'Adigiana-Toybox-Regular';
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #50595B;
+  color: #FFFFFF;
+  text-align: center;
 }
