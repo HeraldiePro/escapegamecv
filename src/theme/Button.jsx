@@ -25,7 +25,9 @@ const useStyles = makeStyles({
     }
   });
   
-const ButtonCustom = ({label = 'Button', handleClick = () => {}, typeButton = 'primary', disable = false}) =>  {
+const ButtonCustom = ({label = 'Button', 
+handleClick = () => {}, 
+typeButton = 'primary'}) =>  {
   const classes = useStyles();
   return <Button 
   className={(typeButton === 'primary') ? classes.primary : classes.secondary}
