@@ -14,7 +14,8 @@ export const colors = {
 
 export const gradient = {
     primary: `linear-gradient(45deg,${colors.tuquoise} 30%,${colors.tuquoiseClaire} 90%)`,
-    secondary: `linear-gradient(45deg,${colors.gris} 30%,${colors.grisClaire} 90%)`
+    secondary: `linear-gradient(45deg,${colors.gris} 30%,${colors.grisClaire} 90%)`,
+    title: `linear-gradient(45deg,${colors.orange} 30%,${colors.marron} 90%)`
 }
 
 export const rules = {
