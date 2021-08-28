@@ -78,14 +78,13 @@ const Etape1 = (props) => {
     const [response, setResponse] = React.useState('');
 
     const handleChange = (event) => {
-        setResponse(event.target.value)
-        
+        setResponse(event.target.value)   
     }
     const handleSubmit = (event) => {
         if(response === '24.30' 
         || response === '24,3'
         || response === '24,30'
-        || response === '24,3')
+        || response === '24.3')
         {
             setValidRep(true)
             setErrorRep(false)
