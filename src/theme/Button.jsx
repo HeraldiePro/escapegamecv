@@ -29,13 +29,15 @@ const ButtonCustom = ({label = 'Button',
 handleClick = () => {}, 
 typeButton = 'primary',
 submit = false,
-dataTestid = ''}) =>  {
+dataTestid = '',
+startIcon = ''}) =>  {
   const classes = useStyles();
   return <Button 
   className={(typeButton === 'primary') ? classes.primary : classes.secondary}
   onClick={handleClick}
   type={(submit) ? 'submit':'button'}
   data-testid = {dataTestid}
+  startIcon = {startIcon}
   >{label}</Button>;
 }
 
