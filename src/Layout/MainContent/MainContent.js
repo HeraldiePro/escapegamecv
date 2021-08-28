@@ -1,16 +1,14 @@
 import React from 'react'
 import Acceuil from '../../components/Acceuil/Acceuil'
-import StepperContent from '../../components/Stepper/Stepper'
+import StepperContent from '../../components/Stepper/Stepper.jsx'
 import { Switch, Route } from 'react-router-dom'
 
 const MainContent = () => {
     return(
-        <main>
-            <Switch>
-                <Route exact path='/' component={Acceuil}/>
-                <Route path='/enigmes' component={StepperContent}/>
-            </Switch>
-        </main>
+        <Switch>
+            <Route exact path='/' component={Acceuil}/>
+            <Route path='/enigmes' component={StepperContent}/>
+        </Switch>
     )
 }
 

@@ -14,6 +14,7 @@ export const QontoConnector = withStyles({
         top: 10,
         left: 'calc(-50% + 16px)',
         right: 'calc(50% + 16px)',
+        color: colors.blanc
     },
     active: {
         '& $line': {
@@ -26,7 +27,7 @@ export const QontoConnector = withStyles({
         },
     },
     line: {
-        borderColor: colors.rose,
+        borderColor: colors.violetFoncer,
         borderTopWidth: 3,
         borderRadius: 1,
     },
@@ -34,13 +35,13 @@ export const QontoConnector = withStyles({
 
 const useQontoStepIconStyles = makeStyles({
     root: {
-        color: colors.violetFoncer,
+        color: colors.rose,
         display: 'flex',
         height: 22,
         alignItems: 'center',
     },
     active: {
-        color: colors.rose,
+        color: colors.orange,
     },
     circle: {
         width: 8,

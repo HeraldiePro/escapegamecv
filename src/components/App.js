@@ -11,10 +11,8 @@ const App = () => {
   return (
     <ThemeProvider>
       <CssBaseline />
-        <Container maxWidth="lg">
-          <MainContent />
-          <Footer />
-        </Container>
+        <MainContent />
+        <Footer />
     </ThemeProvider>
     
   )
