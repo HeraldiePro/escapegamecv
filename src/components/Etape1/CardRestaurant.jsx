@@ -1,14 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card,
-    CardContent,
+import { 
     ListItem,
-    ListItemIcon ,
+    ListItemIcon,
     ListItemText,
     List,
     Typography
  }from '@material-ui/core';
-import { colors, gradient } from '../../theme/variables';
+import { colors } from '../../theme/variables';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 function FastFoodIconIcon(props) {
@@ -37,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     
     notabenne: {
         color: colors.violetClair,
-        marginTop: theme.spacing(3),
+        marginTop: theme.spacing(1),
         
     }
 }));
@@ -50,16 +49,16 @@ const menus = [
         price: "7.60"
     },
     {
-        name: "Menu Sunday :",
-        price: "7.60"
+        name: "Mega Sunday :",
+        price: "9.50"
     },
     {
-        name: "Menu Sunday :",
-        price: "7.60"
+        name: "Hamburger :",
+        price: "3.70"
     },
     {
-        name: "Menu Sunday :",
-        price: "7.60"
+        name: "Cheesburger :",
+        price: "4.00"
     }
 ];
 
@@ -76,7 +75,7 @@ export default function SimpleCard() {
             </ListItemIcon>
             <ListItemText
               primary={<Typography variant="h6" style={{ color: colors.violetClair }}>{ menu.name }</Typography>}
-              secondary={<Typography variant="p" style={{ color: colors.violetFoncer }}>{ menu.price }</Typography>}
+              secondary={<Typography variant="p" style={{ color: colors.violetFoncer }}>{ menu.price } €</Typography>}
             />
           </ListItem>)}
       </List>

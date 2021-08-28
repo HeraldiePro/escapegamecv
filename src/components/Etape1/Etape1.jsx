@@ -12,6 +12,7 @@ import CardRestaurant from './CardRestaurant'
 import ButtonCustom from '../../theme/Button'
 import { colors } from '../../theme/variables';
 
+
 const useStyles = makeStyles((theme) => ({
     title: {
         fontSize: '60px',
@@ -38,47 +39,64 @@ const useStyles = makeStyles((theme) => ({
             marginBottom: theme.spacing(3),
           }, 
     },
-    
+    input: {
+        marginRight:  theme.spacing(3),
+    },
     root: {
-        // minWidth: 275,
         width: 500,
-        //textAlign: 'center'
-    
+        
     },
     titleCard: {
         fontSize: 22,
         color: colors.violetFoncer,
         fontFamily: 'Adigiana-Toybox-Regular'
     },
-    listRoot: {
-        flexGrow: 1,
-        maxWidth: 752,
-    },
     form: {
         marginTop: theme.spacing(3),
         marginLeft: theme.spacing(3),
+    },
+    succes: {
+        color: colors.marron,
+        "& span": {
+            color: colors.tuquoise
+        }
     },
     notabenne: {
         color: colors.violetClair,
         marginTop: theme.spacing(3),
         
+    },
+    error: {
+        color: colors.orange,
+        fontSize: '14px'
     }
 }));
 const Etape1 = (props) => {
     const classes = useStyles();
     const [errorRep, setErrorRep] = React.useState(false);
     const [validRep, setValidRep] = React.useState(false);
+    const [response, setResponse] = React.useState('');
 
     const handleChange = (event) => {
-        const valueForm = event.target.value
-        if(valueForm === '24.3' || valueForm === '24,3')
-            {setValidRep(true)
-            setErrorRep(false)}
-        else
-            {setErrorRep(true)
-            setValidRep(false)}
+        setResponse(event.target.value)
+        
     }
-    
+    const handleSubmit = (event) => {
+        if(response === '24.30' 
+        || response === '24,3'
+        || response === '24,30'
+        || response === '24,3')
+        {
+            setValidRep(true)
+            setErrorRep(false)
+        }
+        else
+        {
+            setErrorRep(true)
+            setValidRep(false)
+        }
+        event.preventDefault();
+    }
     return (
         <>
             <Typography className={classes.instructions}>
@@ -103,41 +121,37 @@ const Etape1 = (props) => {
                                     Carte menus :
                                 </Typography>
                                 <CardRestaurant />
-                                <form className={classes.form} noValidate autoComplete="off">
+                                {(errorRep) ? <p className={classes.error}>
+                                    Indice : pour calculer facilement une réduction de 10% diviser par 10 le résultat initial ou bien d’aller
+                                    sur le site du service publique et de faire une simulation de calcul <span role="img" aria-label="smile">😊</span>.
+                                </p> : ''}
+                                <form hidden={validRep} className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
                                     <TextField 
                                         error={errorRep}
+                                        disabled={validRep}
                                         helperText={(errorRep) ? "Ceci n'est pas la bonne reponse" : ''}
                                         InputProps={{ 
                                             className: classes.input,
                                             endAdornment: <InputAdornment position="end">€</InputAdornment> 
                                         }}  
+                                        label="Repondre ici"  
+                                        id="custom-css-outlined-input"
                                         onChange={handleChange}
-                                        id="standard-basic" 
-                                        label="Repondre ici"   
                                     />
+                                    <ButtonCustom  submit={true}  label="Valider ma réponse" />
                                 </form>
-                                <p hidden={!errorRep}>
-                                    Indice : pour calculer facilement une réduction de 10% diviser par 10 le résultat initial ou bien d’aller
-                                </p>
-
-                                <p hidden={!validRep}>
-                                    Bravo vous pouvez aller a etape suivante
-                                </p>
-                                
+                                {(validRep) ? <p className={classes.succes}>
+                                    <b>Bravo la réponse été bien <span>{response}</span> vous pouvez aller a etape suivante <span role="img" aria-label="sparke">✨</span></b>
+                                </p> : '' }
                             </CardContent>
                         </Card>
                     </div>
                     
                 </Container>
             </Typography>
-            { 
-                (validRep) ? (
-                    <div className={classes.container}>
-                        <ButtonCustom label="Aller a l'étape suivante" handleClick={props.propsClick} />
-                    </div>
-                ): '' 
-                
-            }
+            <div hidden={!validRep} className={classes.container}>
+                <ButtonCustom label="Aller a l'étape suivante" handleClick={props.propsClick} />
+            </div>
         </>
         
     )
