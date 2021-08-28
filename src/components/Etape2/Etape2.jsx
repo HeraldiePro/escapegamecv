@@ -49,7 +49,7 @@ const Etape2 = (props) => {
     return (
         <>
             <Typography className={classes.instructions}>
-                <h1>Etape numero 2</h1>
+                <h1 data-testid="Etape2Title">Etape numero 2</h1>
                 <Container maxWidth="lg" className={classes.align}>
                     <Typography className={classes.paragraph}>
                         Comme beaucoup de jeunes actif je commençai par travailler en restauration rapide, je dois bien

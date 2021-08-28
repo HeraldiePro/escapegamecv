@@ -27,11 +27,16 @@ const useStyles = makeStyles({
   
 const ButtonCustom = ({label = 'Button', 
 handleClick = () => {}, 
-typeButton = 'primary'}) =>  {
+typeButton = 'primary',
+submit = false,
+dataTestid = ''}) =>  {
   const classes = useStyles();
   return <Button 
   className={(typeButton === 'primary') ? classes.primary : classes.secondary}
-  onClick={handleClick}>{label}</Button>;
+  onClick={handleClick}
+  type={(submit) ? 'submit':'button'}
+  data-testid = {dataTestid}
+  >{label}</Button>;
 }
 
 export default ButtonCustom;
