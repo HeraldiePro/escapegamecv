@@ -4,12 +4,25 @@ import {
     Container, 
     Paper,
     TextField,
-
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    List,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import ButtonCustom from '../../theme/Button'
 import { colors } from '../../theme/variables';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
+function RunIconIcon(props) {
+    return (
+      <SvgIcon {...props}>
+        <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
+      </SvgIcon>
+    );
+}
+
+const listEnigme = ['Prestidigitation', 'Théâtre', 'Sport', 'Dance']
 const useStyles = makeStyles((theme) => ({
     title: {
         fontSize: '60px',
@@ -59,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: 10
     },
 }));
-const Etape2 = (props) => {
+const Etape3 = (props) => {
     const classes = useStyles();
     const [errorRep, setErrorRep] = React.useState(false);
     const [validRep, setValidRep] = React.useState(false);
@@ -71,8 +84,7 @@ const Etape2 = (props) => {
     
     const handleSubmit = (event) => {
 
-        if(response.toLowerCase() === 'pédagogie' 
-        || response.toLowerCase() === 'pedagogie' )
+        if(response.toLowerCase() === 'sport')
         {
             setValidRep(true)
             setErrorRep(false)
@@ -88,25 +100,42 @@ const Etape2 = (props) => {
     return (
         <>
             <Typography className={classes.instructions}>
-                <h1 style={{paddingTop: 15 }} data-testid="Etape2Title">Animation enfant</h1>
+                <h1 style={{paddingTop: 15 }} data-testid="Etape3Title">Animation village vacances</h1>
                 <Container maxWidth="lg" className={classes.align}>
                     <Typography className={classes.paragraph}>
-                        Suite à une reconversion professionnel je décidâmes ensuite de m’orienter vers l’animation jeune
-                        public, pour ce faire j’ai fait le parcours classique du BAFA et direct après son acquisition j’ai pu
-                        commencer à travailler pour une association pour les temps de périscolaire. J’avais d’ailleurs déjà à
-                        cœur de masteriser et d’initier mon public à différents jeux de société et/ou de stratégie.
+                        De fil en aiguille j’ai souhaité expérimenter d’animer des public dans des structures différentes avec
+                        des public plus varié, j’ai donc eu la chance de travailler en saison pour un village vacance 4 étoile
+                        situé sur la côte d’azur du nom très rigolo de TourisTra.
+                    </Typography>
+                    <Typography className={classes.paragraph}>
+                        Au cours de cette expérience j’ai eu l’occasion de mettre à profit mes compétences en théâtre en
+                        montant sur scène (et parfois même de faire du travestie hihi) d’apprendre des rudiments de
+                        prestidigitation, d’improviser un jeu de piste avec pour élément principal une bobine de laine et aussi
+                        d’apprendre des chorégraphie (pour mon plus grand plaisir) pour des animations avec les enfants qui
+                        avait lieu 5 jours sur 7 (le principe de mini si vous connaissez).
                     </Typography>
                     <h2>L'énigme est donc la suivante</h2>
                     <Typography style={{fontSize: 18}}>
-                        Décrifrer le rébu suivant : Ajouter liste des images 
+                        Veuillez trouver parmi la liste ci-dessous et en vous aidant du texte ci-dessus l’intrus dans cette liste d’activités. 
                     </Typography>
                     <Paper className={classes.contentForm} elevation={2} >
-                        {(errorRep) ? <p data-testid="textErrorEtape2" className={classes.error}>
-                            Indice : le personnage dessinée est russe et pour le plateau il s’agit célèbre jeux de stratégie coréen. <span role="img" aria-label="smile">😊</span>.
+                        {(errorRep) ? <p data-testid="textErrorEtape3" className={classes.error}>
+                            Indice :  <span role="img" aria-label="smile">😊</span>.
                         </p> : ''}
+                        <List>
+                        {listEnigme.map((element) => 
+                            <ListItem key={element}>
+                                <ListItemIcon>
+                                    <RunIconIcon style={{ color: colors.rose }}/>
+                                </ListItemIcon>
+                                <ListItemText
+                                    primary={<Typography variant="h6" style={{ color: colors.violetClair }}>{ element }</Typography>}
+                                />
+                            </ListItem>)}
+                        </List>
                         <form hidden={validRep} className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
                             <TextField 
-                                data-testid="inputEtape1"
+                                data-testid="inputEtape3"
                                 error={errorRep}
                                 disabled={validRep}
                                 helperText={(errorRep) ? "Ceci n'est pas la bonne reponse" : ''}
@@ -117,9 +146,9 @@ const Etape2 = (props) => {
                                 id="custom-css-outlined-input"
                                 onChange={handleChange}
                             />
-                            <ButtonCustom dataTestid="SubmitEtape2" submit={true}  label="Valider ma réponse" />
+                            <ButtonCustom dataTestid="SubmitEtape3" submit={true}  label="Valider ma réponse" />
                         </form>
-                        {(validRep) ? <p data-testid="succesTextEtape2" className={classes.succes}>
+                        {(validRep) ? <p data-testid="succesTextEtape3" className={classes.succes}>
                             <b>Bravo la réponse été bien <span>{response}</span> vous pouvez aller a etape suivante <span role="img" aria-label="sparke">✨</span></b>
                         </p> : '' }
                     </Paper>
@@ -134,4 +163,4 @@ const Etape2 = (props) => {
     )
 }
 
-export default Etape2;
+export default Etape3;

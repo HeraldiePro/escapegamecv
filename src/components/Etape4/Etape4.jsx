@@ -4,11 +4,13 @@ import {
     Container, 
     Paper,
     TextField,
-
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import ButtonCustom from '../../theme/Button'
 import { colors } from '../../theme/variables';
+import alphabetMorse from '../../assets/images/morse.jpg'
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -53,13 +55,16 @@ const useStyles = makeStyles((theme) => ({
     contentForm: {
         marginTop: theme.spacing(3),
         minheight: 200,
-        width: 600,
+        width: 850,
         paddingLeft: 10,
         paddingTop: 5,
         paddingBottom: 10
     },
+    morse: {
+        fontSize: 49
+    }
 }));
-const Etape2 = (props) => {
+const Etape4 = (props) => {
     const classes = useStyles();
     const [errorRep, setErrorRep] = React.useState(false);
     const [validRep, setValidRep] = React.useState(false);
@@ -71,8 +76,7 @@ const Etape2 = (props) => {
     
     const handleSubmit = (event) => {
 
-        if(response.toLowerCase() === 'pédagogie' 
-        || response.toLowerCase() === 'pedagogie' )
+        if(response.toLowerCase() === 'escape yourself')
         {
             setValidRep(true)
             setErrorRep(false)
@@ -88,25 +92,33 @@ const Etape2 = (props) => {
     return (
         <>
             <Typography className={classes.instructions}>
-                <h1 style={{paddingTop: 15 }} data-testid="Etape2Title">Animation enfant</h1>
+                <h1 style={{paddingTop: 15 }} data-testid="Etape3Title">Formation ATL et stage en escape game</h1>
                 <Container maxWidth="lg" className={classes.align}>
                     <Typography className={classes.paragraph}>
-                        Suite à une reconversion professionnel je décidâmes ensuite de m’orienter vers l’animation jeune
-                        public, pour ce faire j’ai fait le parcours classique du BAFA et direct après son acquisition j’ai pu
-                        commencer à travailler pour une association pour les temps de périscolaire. J’avais d’ailleurs déjà à
-                        cœur de masteriser et d’initier mon public à différents jeux de société et/ou de stratégie.
+                        Afin de me perfectionner j’ai choisi de participer à une formation à l’afpa de tours nord en tant
+                        qu’animateur en tourisme et loisir. Et c’est par ce biais que j’ai découvert l’univers de l’escape game
+                        j’ai donc procédé à un stage de 3 mois en entreprise, stage qui à été rémunéré au vus du travail que
+                        j’ai fourni durant une période de forte affluence.
                     </Typography>
                     <h2>L'énigme est donc la suivante</h2>
                     <Typography style={{fontSize: 18}}>
-                        Décrifrer le rébu suivant : Ajouter liste des images 
+                        Trouver les 2 mots (un par ligne) afin d'obtenir le code secret 
                     </Typography>
                     <Paper className={classes.contentForm} elevation={2} >
-                        {(errorRep) ? <p data-testid="textErrorEtape2" className={classes.error}>
-                            Indice : le personnage dessinée est russe et pour le plateau il s’agit célèbre jeux de stratégie coréen. <span role="img" aria-label="smile">😊</span>.
+                        {(errorRep) ? <p data-testid="textErrorEtape3" className={classes.error}>
+                            Indice : Indice : Il s’agit d’un code en morse <span role="img" aria-label="smile">😊</span>.
                         </p> : ''}
+                        <Typography variant="h3" className={classes.morse}>
+                            <FiberManualRecordIcon /> / <FiberManualRecordIcon /><FiberManualRecordIcon /><FiberManualRecordIcon /> / -<FiberManualRecordIcon />-<FiberManualRecordIcon /> / <FiberManualRecordIcon />- / <FiberManualRecordIcon />--<FiberManualRecordIcon /> / 
+                        </Typography>
+                        <Typography variant="h3" className={classes.morse}>
+                        -<FiberManualRecordIcon />-- / --- / <FiberManualRecordIcon /><FiberManualRecordIcon />- / <FiberManualRecordIcon />-<FiberManualRecordIcon /> / <FiberManualRecordIcon /><FiberManualRecordIcon /><FiberManualRecordIcon /> <FiberManualRecordIcon /> / <FiberManualRecordIcon />-<FiberManualRecordIcon /><FiberManualRecordIcon /> / <FiberManualRecordIcon /><FiberManualRecordIcon />-<FiberManualRecordIcon />
+                        </Typography>
+                        <img src={alphabetMorse}  alt="alphabetMorse" />
                         <form hidden={validRep} className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
                             <TextField 
-                                data-testid="inputEtape1"
+                                multiline
+                                data-testid="inputEtape3"
                                 error={errorRep}
                                 disabled={validRep}
                                 helperText={(errorRep) ? "Ceci n'est pas la bonne reponse" : ''}
@@ -117,9 +129,9 @@ const Etape2 = (props) => {
                                 id="custom-css-outlined-input"
                                 onChange={handleChange}
                             />
-                            <ButtonCustom dataTestid="SubmitEtape2" submit={true}  label="Valider ma réponse" />
+                            <ButtonCustom dataTestid="SubmitEtape3" submit={true}  label="Valider ma réponse" />
                         </form>
-                        {(validRep) ? <p data-testid="succesTextEtape2" className={classes.succes}>
+                        {(validRep) ? <p data-testid="succesTextEtape3" className={classes.succes}>
                             <b>Bravo la réponse été bien <span>{response}</span> vous pouvez aller a etape suivante <span role="img" aria-label="sparke">✨</span></b>
                         </p> : '' }
                     </Paper>
@@ -134,4 +146,4 @@ const Etape2 = (props) => {
     )
 }
 
-export default Etape2;
+export default Etape4;

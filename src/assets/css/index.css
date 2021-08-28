@@ -25,7 +25,7 @@ body {
 }
 
 
-.content-acceuil{
+.content-acceuil, .etape-6{
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/High_resolution_wallpaper_background_ID_77700208859.jpg') center/cover fixed no-repeat;
   text-align: center;
 
@@ -36,8 +36,21 @@ body {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/restaurant.jpg') center/cover fixed no-repeat;
 }
 
+
 .etape-2{
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), center/cover fixed no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/jeu.jpg') center/cover fixed no-repeat;
+}
+
+.etape-3{
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/pokemon.jpg') center/cover fixed no-repeat;
+}
+
+.etape-4{
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/escapegame.jpg') center/cover fixed no-repeat;
+}
+
+.etape-5{
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/harrypotter.jpg') center/cover fixed no-repeat;
 }
 
 .contenu-acceuil {

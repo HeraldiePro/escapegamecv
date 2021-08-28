@@ -4,13 +4,15 @@ import { makeStyles} from '@material-ui/core/styles'
 import {
   Stepper,
   Step,
-  StepLabel,
-  Typography
+  StepLabel
 } from '@material-ui/core'
 
 import Etape1 from '../Etape1/Etape1'
 import Etape2 from '../Etape2/Etape2'
-import ButtonCustom from '../../theme/Button'
+import Etape3 from '../Etape3/Etape3'
+import Etape4 from '../Etape4/Etape4'
+import Etape5 from '../Etape5/Etape5'
+import Remerciment from '../Remerciments/Remerciment'
 import { QontoConnector, QontoStepIcon} from './StyleStepper'
 
 const useStyles = makeStyles((theme) => ({
@@ -29,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     }));
 
 const getSteps = () => {
-    return ['etape1', 'etape2', 'etape3', 'etape4'];
+    return ['etape1', 'etape2', 'etape3', 'etape4', 'etape 5'];
 }
 
 const getStepContent = (step, propsClick) => {
@@ -39,9 +41,13 @@ const getStepContent = (step, propsClick) => {
         case 1:
         return <Etape2 propsClick={propsClick} />;
         case 2:
-        return 'This is the bit I really care about!';
+        return <Etape3 propsClick={propsClick} />;
         case 3:
-        return 'gdfgdfgdfgfd';
+        return <Etape4 propsClick={propsClick} />;
+        case 4:
+        return <Etape5 propsClick={propsClick} />;
+        case 5:
+        return <Remerciment />;
         default:
         return 'Unknown step';
     }
@@ -53,17 +59,12 @@ const StepperContent = () => {
     const steps = getSteps();
 
     const handleNext = () => {
-        console.log('ICI')
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
-    // const handleBack = () => {
-    //     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    // const handleReset = () => {
+    //     setActiveStep(0);
     // };
-
-    const handleReset = () => {
-        setActiveStep(0);
-    };
 
     return (
         <>
@@ -80,18 +81,9 @@ const StepperContent = () => {
                 </div>
             </div>
             <div data-testid="ContentStepper" className={`content etape-${activeStep + 1}`}>
-                {activeStep === steps.length ? (
-                        <div>
-                            <Typography className={classes.instructions}>
-                                Mettre ici les remerciments 
-                            </Typography>
-                            <ButtonCustom label="Reset les etapes" handleClick={handleReset} />
-                        </div>
-                    ) : (
-                        <div className="container-step">
-                            {getStepContent(activeStep, handleNext)}
-                        </div>
-                    )}
+                <div className="container-step">
+                    {getStepContent(activeStep, handleNext)}
+                </div>
             </div>
             
         </>
