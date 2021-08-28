@@ -9,12 +9,14 @@ import {
 } from '@material-ui/core'
 
 import Etape1 from '../Etape1/Etape1'
+import Etape2 from '../Etape2/Etape2'
 import ButtonCustom from '../../theme/Button'
 import { QontoConnector, QontoStepIcon} from './StyleStepper'
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
+        background: 'transparent'
     },
     button: {
         marginRight: theme.spacing(1),
@@ -23,23 +25,19 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(1),
         marginBottom: theme.spacing(1),
     },
-    container: {
-        '& > *': {
-            margin: theme.spacing(1),
-          }, 
-    }
+    
     }));
 
 const getSteps = () => {
-    return ['Select campaign settings', 'Create an ad group', 'Create an ad', 'E'];
+    return ['etape1', 'etape2', 'etape3', 'etape4'];
 }
 
-const getStepContent = (step) => {
+const getStepContent = (step, propsClick) => {
     switch (step) {
         case 0:
-        return <Etape1 />;
+        return <Etape1 propsClick={propsClick} />;
         case 1:
-        return 'What is an ad group anyways?';
+        return <Etape2 propsClick={propsClick} />;
         case 2:
         return 'This is the bit I really care about!';
         case 3:
@@ -55,29 +53,34 @@ const StepperContent = () => {
     const steps = getSteps();
 
     const handleNext = () => {
+        console.log('ICI')
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
-    const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    };
+    // const handleBack = () => {
+    //     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    // };
 
     const handleReset = () => {
         setActiveStep(0);
     };
 
     return (
-        <div data-testid="ContentStepper" className="content">
-            <div className={classes.root}>
+        <>
+            <div className={`force-blanc ${classes.root}`}>
                 <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
                     {steps.map((label) => (
-                    <Step key={label}>
-                        <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-                    </Step>
+                        <Step key={label}>
+                            <StepLabel StepIconComponent={QontoStepIcon}></StepLabel>
+                        </Step>
                     ))}
                 </Stepper>
                 <div>
-                    {activeStep === steps.length ? (
+                    
+                </div>
+            </div>
+            <div data-testid="ContentStepper" className={`content etape-${activeStep + 1}`}>
+                {activeStep === steps.length ? (
                         <div>
                             <Typography className={classes.instructions}>
                                 Mettre ici les remerciments 
@@ -85,17 +88,13 @@ const StepperContent = () => {
                             <ButtonCustom label="Reset les etapes" handleClick={handleReset} />
                         </div>
                     ) : (
-                        <div>
-                            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-                            <div className={classes.container}>
-                                {(activeStep > 0) ? <ButtonCustom label="Retourner à l'étape précédente" handleClick={handleBack} typeButton='secondary'/> :  ''}
-                                <ButtonCustom label="Aller à l'étape suivante" handleClick={handleNext} />
-                            </div>
+                        <div className="container-step">
+                            {getStepContent(activeStep, handleNext)}
                         </div>
                     )}
-                </div>
             </div>
-        </div>  
+            
+        </>
     )
 }
 
