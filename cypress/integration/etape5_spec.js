@@ -146,8 +146,8 @@ describe('Etapes 5:', function() {
         .should('be.visible')
         .click()
 
-        cy.get('[data-testid=Title]')
+        cy.get('[data-testid=Etape3Title]')
         .should('be.visible')
-        .should('have.text','Extra pour 221 b')
+        .should('have.text','Un grand merci a vous !')
     })
 });
