@@ -39,7 +39,7 @@ body {
 
 
 .content-acceuil, .etape-6{
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/High_resolution_wallpaper_background_ID_77700208859.jpg') center/cover fixed no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/aceuilremerciment.jpg') center/cover fixed no-repeat;
   text-align: center;
 
   min-height: 100vh;
@@ -51,11 +51,11 @@ body {
 
 
 .etape-2{
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/jeu.jpg') center/cover fixed no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/fondetape2.jpg') center/cover fixed no-repeat;
 }
 
 .etape-3{
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/pokemon.jpg') center/cover fixed no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/fondetape3.jpg') center/cover fixed no-repeat;
 }
 
 .etape-4{
