@@ -68,23 +68,23 @@ const StepperContent = () => {
 
     return (
         <>
-            <div className={`force-blanc ${classes.root}`}>
-                <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
-                    {steps.map((label) => (
-                        <Step key={label}>
-                            <StepLabel StepIconComponent={QontoStepIcon}></StepLabel>
-                        </Step>
-                    ))}
-                </Stepper>
-                <div>
-                    
-                </div>
-            </div>
             <div data-testid="ContentStepper" className={`content etape-${activeStep + 1}`}>
                 <div className="container-step">
                     {getStepContent(activeStep, handleNext)}
                 </div>
             </div>
+            <div className={`force-blanc ${classes.root}`}>
+                <div>
+                    <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
+                        {steps.map((label) => (
+                            <Step key={label}>
+                                <StepLabel StepIconComponent={QontoStepIcon}></StepLabel>
+                            </Step>
+                        ))}
+                    </Stepper>
+                </div>
+            </div>
+            
             
         </>
     )

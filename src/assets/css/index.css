@@ -16,7 +16,9 @@ body {
 .content {
   min-height: 100vh;
   text-align: center;
-  color: #FFFFFF
+  color: #FFFFFF;
+  position: absolute;
+  width: 100vw;
   
 }
 
@@ -54,7 +56,7 @@ body {
 }
 
 .contenu-acceuil {
-  padding-top: 150px
+  padding-top: 100px
 }
 
 .MuiPaper-root{
