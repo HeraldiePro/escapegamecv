@@ -16,8 +16,21 @@ body {
 .content {
   min-height: 100vh;
   text-align: center;
-  color: #FFFFFF
+  color: #FFFFFF;
+  position: absolute;
+  width: 100vw;
   
+}
+
+@media screen and (max-width: 500px){
+  img {
+    width: 271px;
+  }
+}
+
+
+.container-step {
+  padding-top: 30px;
 }
 
 .MuiStepLabel-label{
@@ -54,7 +67,7 @@ body {
 }
 
 .contenu-acceuil {
-  padding-top: 150px
+  padding-top: 100px
 }
 
 .MuiPaper-root{

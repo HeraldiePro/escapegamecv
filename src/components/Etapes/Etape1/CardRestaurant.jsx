@@ -7,7 +7,7 @@ import {
     List,
     Typography
  }from '@material-ui/core';
-import { colors } from '../../theme/variables';
+import { colors } from '../../../theme/variables';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 function FastFoodIconIcon(props) {

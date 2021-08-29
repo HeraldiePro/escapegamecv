@@ -7,7 +7,7 @@ import { colors, gradient } from '../../theme/variables';
 const useStyles = makeStyles((theme) => ({
     title: {
         color: colors.blanc,
-        fontSize: '60px'
+        fontSize: '50px'
     },
     buttonTitle: {
         background: gradient.title,
@@ -15,8 +15,6 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: 3,
         boxShadow: '0 3px 5px 2px '+ colors.grisClaire,
         color: 'white',
-        height: 58,
-        padding: '0 30px',
         fontSize: '20px'
     },
     paragraph: {

@@ -1,9 +1,7 @@
 import React from 'react'
 import { 
     Typography, 
-    Container, 
-    Paper,
-    TextField,
+    Container
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import ButtonCustom from '../../theme/Button'
@@ -71,30 +69,8 @@ const download = (fileUrl, fileName) => {
   }
 
 
-const Etape4 = (props) => {
+const Etape4 = () => {
     const classes = useStyles();
-    const [errorRep, setErrorRep] = React.useState(false);
-    const [validRep, setValidRep] = React.useState(false);
-    const [response, setResponse] = React.useState('');
-    
-    const handleChange = (event) => {
-        setResponse(event.target.value)   
-    }
-    
-    const handleSubmit = (event) => {
-
-        if(response.toLowerCase() === 'escape yourself')
-        {
-            setValidRep(true)
-            setErrorRep(false)
-        }
-        else
-        {
-            setErrorRep(true)
-            setValidRep(false)
-        }
-        event.preventDefault();
-    }
       
     const handleClick = () => {
         download(cv, "CV_Antoine.pdf");
