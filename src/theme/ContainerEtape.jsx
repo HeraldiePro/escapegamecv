@@ -1,6 +1,5 @@
 import React from 'react'
 import { 
-    Typography, 
     Container, 
     Card,
     CardContent,
@@ -91,13 +90,15 @@ const ContainerEtape = ({
     const [errorRep, setErrorRep] = React.useState(false);
     const [validRep, setValidRep] = React.useState(false);
     const [response, setResponse] = React.useState('');
+    const [countRep, setCountRep] = React.useState(0);
 
     const handleChange = (event) => {
         setResponse(event.target.value)   
     }
     
     const handleSubmit = (event) => {
-
+        setCountRep(countRep + 1)
+        
         if(response.toLowerCase() === reponse 
         || response.replace(',', '.') === reponse )
         {
@@ -108,30 +109,31 @@ const ContainerEtape = ({
         {
             setErrorRep(true)
             setValidRep(false)
+           
         }
         event.preventDefault();
     }
     console.log('{grandCard}',grandCard)
     return (
         <>
-            <Typography className={classes.instructions}>
+            <div className={classes.instructions}>
                 <h1 data-testid="Title">{title}</h1>
                 <Container maxWidth="lg" className={classes.align}> 
                     { 
                         paraph.map((paraph) => 
-                            <Typography key={paraph} data-testid="p1" className={classes.paragraph}>
+                            <p key={paraph} data-testid="p1" className={classes.paragraph} >
                                 {paraph}
-                            </Typography>
+                            </p>
                         )      
                     }
                     <h2 data-testid="h2">L'énigme est donc la suivante</h2>
-                    <Typography style={{fontSize: 18}} data-testid="enoncer">
+                    <p style={{fontSize: 18}} data-testid="enoncer">
                         {enigme}
-                    </Typography>
+                    </p>
                     <div style={{ display:'flex', justifyContent:'center' }}>
                         <Card className={(grandCard) ? classes.grand : classes.root}>
                             <CardContent data-testid="ContentCard">
-                                {(errorRep) ? <p data-testid="textError" className={classes.error}>
+                                {(errorRep && countRep > 3) ? <p data-testid="textError" className={classes.error}>
                                     Indice : {indice} <span role="img" aria-label="smile">😊</span>.
                                 </p> : ''}
                                 {
@@ -162,7 +164,7 @@ const ContainerEtape = ({
                         </Card>
                     </div>
                 </Container>
-            </Typography>
+            </div>
             <div hidden={!validRep} className={classes.container}>
                 <ButtonCustom dataTestid="NextStep" label="Aller a l'étape suivante" handleClick={nextStep} />
             </div>

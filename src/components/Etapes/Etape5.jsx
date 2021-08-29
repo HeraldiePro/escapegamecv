@@ -39,8 +39,6 @@ une porte située sur sa droite. Les autres élèves devaient déjà être là. 
 obligea à se serrer les uns contre les autres et ils restèrent debout en silence, lançant autour
 d'eux des regards un peu inquiets. »`
 
-const propsEnigme2 = ``
-
 const propsIndice = `il s’agit de coordonnées dans le texte afin de trouver un mot en 5 lettre. `
 
 const Etape5 = ({propsClick}) => {
