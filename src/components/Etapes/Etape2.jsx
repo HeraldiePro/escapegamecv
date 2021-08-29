@@ -1,6 +1,10 @@
 import React from 'react'
 import ContainerEtape from '../../theme/ContainerEtape'
+import rebut from '../../assets/images/rebut/rebut.jpg'
 
+const Etape2Contain = () => {
+    return <img src={rebut} alt="rebut" />
+}
 const title = "Animation enfant"
 const response = "pédagogie"
 const propsEtape = `Suite à une reconversion professionnel je décidâmes ensuite de m’orienter vers l’animation jeune
@@ -14,13 +18,14 @@ const propsIndice = `le personnage dessinée est russe et pour le plateau il s�
 
 const Etape2 = ({propsClick}) => {
     return <ContainerEtape 
-    etapeComponent=""
+    etapeComponent={<Etape2Contain />}
     title={title}
     paraph={[propsEtape]}  
     reponse = {response}
     enigme={propsEnigme}
     indice={propsIndice}
     nextStep={propsClick}
+    grandCard = {true}
  />
 }
 

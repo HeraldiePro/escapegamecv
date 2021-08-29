@@ -42,12 +42,14 @@ const useStyles = makeStyles((theme) => ({
     root: {
         marginTop: 15,
         width: 500,
+        backgroundColor: `${colors.blanc} !important` 
         
     },
     grand: {
         marginTop: 15,
         with: 800,
-        minWidth: 300
+        minWidth: 300,
+        backgroundColor: `${colors.blanc} !important` 
     },
     titleCard: {
         fontSize: 22,
