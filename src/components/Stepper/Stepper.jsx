@@ -7,11 +7,11 @@ import {
   StepLabel
 } from '@material-ui/core'
 
-import Etape1 from '../Etape1/Etape1'
-import Etape2 from '../Etape2/Etape2'
-import Etape3 from '../Etape3/Etape3'
-import Etape4 from '../Etape4/Etape4'
-import Etape5 from '../Etape5/Etape5'
+import Etape1 from '../Etapes/Etape1/Etape1'
+import Etape2 from '../Etapes/Etape2'
+import Etape3 from '../Etapes/Etape3'
+import Etape4 from '../Etapes/Etape4'
+import Etape5 from '../Etapes/Etape5'
 import Remerciment from '../Remerciments/Remerciment'
 import { QontoConnector, QontoStepIcon} from './StyleStepper'
 
@@ -61,10 +61,6 @@ const StepperContent = () => {
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
-
-    // const handleReset = () => {
-    //     setActiveStep(0);
-    // };
 
     return (
         <>

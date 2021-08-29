@@ -22,6 +22,17 @@ body {
   
 }
 
+@media screen and (max-width: 500px){
+  img {
+    width: 271px;
+  }
+}
+
+
+.container-step {
+  padding-top: 30px;
+}
+
 .MuiStepLabel-label{
   color: #FFFFFF !important;
 }
