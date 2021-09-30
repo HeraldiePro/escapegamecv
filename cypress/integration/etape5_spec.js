@@ -77,12 +77,6 @@ describe('Etapes 5:', function() {
         .should('have.text', "L'énigme est donc la suivante")
     })
 
-    it('Test enoncer',() => {
-        cy.get('[data-testid=enoncer]')
-        .should('be.visible')
-        .should('have.text', `« Le hall d'entrée du château était si grand que la maison des Dursley aurait pu y tenir toute\nentière et le plafond si haut qu'on arrivait pas à l'apercevoir. Des torches enflammées étaient\nfixées aux murs de pierre, comme à Gringotts, et un somptueux escalier de marbre\npermettait de monter dans les étages. Guidés par le professeur McGonagall, ils traversèrent\nl'immense salle au sol dallé et entrèrent dans une petite salle réservée aux élèves de\npremière année. Harry entendait la rumeur de centaines de voix qui lui parvenaient à travers\nune porte située sur sa droite. Les autres élèves devaient déjà être là. L'exiguïté des lieux les\nobligea à se serrer les uns contre les autres et ils restèrent debout en silence, lançant autour\nd'eux des regards un peu inquiets. »`)
-    })
-
     it('Test ContentCard',() => {
         cy.get('[data-testid=ContentCard]')
         .should('be.visible')
@@ -127,7 +121,6 @@ describe('Etapes 5:', function() {
         cy
         .get("[data-testid=textError]")
         .should('be.visible')
-        .should('have.text','Indice : il s’agit de coordonnées dans le texte afin de trouver un mot en 5 lettre.  😊.')
     })
 
     it('Good answer',() => {
@@ -146,8 +139,8 @@ describe('Etapes 5:', function() {
         .should('be.visible')
         .click()
 
-        cy.get('[data-testid=Title]')
+        cy.get('[data-testid=Etape3Title]')
         .should('be.visible')
-        .should('have.text','Extra pour 221 b')
+        .should('have.text','Un grand merci a vous !')
     })
 });

@@ -42,12 +42,14 @@ const useStyles = makeStyles((theme) => ({
     root: {
         marginTop: 15,
         width: 500,
+        backgroundColor: `${colors.blanc} !important` 
         
     },
     grand: {
         marginTop: 15,
         with: 800,
-        minWidth: 300
+        minWidth: 300,
+        backgroundColor: `${colors.blanc} !important` 
     },
     titleCard: {
         fontSize: 22,
@@ -158,7 +160,7 @@ const ContainerEtape = ({
                                     <ButtonCustom dataTestid="Submit" submit={true}  label="Valider ma réponse" />
                                 </form>
                                 {(validRep) ? <p data-testid="succes" className={classes.succes}>
-                                    <b>Bravo la réponse été bien <span>{response}</span> vous pouvez aller a etape suivante <span role="img" aria-label="sparke">✨</span></b>
+                                    <b>Bravo la réponse était bien <span>{response}</span> vous pouvez aller a etape suivante <span role="img" aria-label="sparke">✨</span></b>
                                 </p> : '' }
                             </CardContent>
                         </Card>

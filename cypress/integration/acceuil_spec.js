@@ -7,7 +7,7 @@ describe('Acceuil:', function() {
         cy.get('[data-testid=ContentAcceuil]')
         .should('be.visible')
         .should('have.class', 'content-acceuil')
-        .should('have.css','background-image','linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("http://localhost:3000/static/media/High_resolution_wallpaper_background_ID_77700208859.cf857fab.jpg")')
+        .should('have.css','background-image','linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("http://localhost:3000/static/media/aceuilremerciment.31d38322.jpg")')
     })
 
     it('Test container acceil exist and have good style and text',() => {

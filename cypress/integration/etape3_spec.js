@@ -47,12 +47,6 @@ describe('Etapes 3:', function() {
         .should('have.text', "L'énigme est donc la suivante")
     })
 
-    it('Test enoncer',() => {
-        cy.get('[data-testid=enoncer]')
-        .should('be.visible')
-        .should('have.text', ' Veuillez trouver parmi la liste ci-dessous et en vous aidant du texte ci-dessus l’intrus dans cette liste d’activités ')
-    })
-
     it('Test ContentCard',() => {
         cy.get('[data-testid=ContentCard]')
         .should('be.visible')
@@ -94,10 +88,6 @@ describe('Etapes 3:', function() {
         cy.get('[data-testid=Submit]')
         .click()
         
-        cy
-        .get("[data-testid=textError]")
-        .should('be.visible')
-        .should('have.text','Indice :  😊.')
     })
 
     it('Good answer',() => {
