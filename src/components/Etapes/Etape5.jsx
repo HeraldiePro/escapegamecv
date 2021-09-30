@@ -4,6 +4,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import ContainerEtape from '../../theme/ContainerEtape'
+import etape5img from '../../assets/images/etape5/etape5.png'
 
 const useStyles = makeStyles((theme) => ({
     typo: {
@@ -15,8 +16,7 @@ const ContainEtape5 = () => {
     const classes = useStyles();
     return (
         <>
-            <i>Harry potter à l’école des sorcier chapitre 7.</i>
-            <Typography className={classes.typo}>(1.11.1)(2.2.1)(6.1.2)(8.7.1)(9.6.1)</Typography>
+            <img src={etape5img} alt="Text" />
         </>
     )
 }
@@ -29,17 +29,7 @@ qu’animateur en tourisme et loisir. Et c’est par ce biais que j’ai découv
 j’ai donc procédé à un stage de 3 mois en entreprise, stage qui à été rémunéré au vus du travail que
 j’ai fourni durant une période de forte affluence.`
 
-const propsEnigme = `« Le hall d'entrée du château était si grand que la maison des Dursley aurait pu y tenir toute
-entière et le plafond si haut qu'on arrivait pas à l'apercevoir. Des torches enflammées étaient
-fixées aux murs de pierre, comme à Gringotts, et un somptueux escalier de marbre
-permettait de monter dans les étages. Guidés par le professeur McGonagall, ils traversèrent
-l'immense salle au sol dallé et entrèrent dans une petite salle réservée aux élèves de
-première année. Harry entendait la rumeur de centaines de voix qui lui parvenaient à travers
-une porte située sur sa droite. Les autres élèves devaient déjà être là. L'exiguïté des lieux les
-obligea à se serrer les uns contre les autres et ils restèrent debout en silence, lançant autour
-d'eux des regards un peu inquiets. »`
-
-const propsIndice = `il s’agit de coordonnées dans le texte afin de trouver un mot en 5 lettre. `
+const propsIndice = `les chiffres entre parenthèse donne des coordonnées exemple (la première li.. le onzième M.. la première L…)`
 
 const Etape5 = ({propsClick}) => {
     return (<ContainerEtape 
@@ -48,7 +38,7 @@ const Etape5 = ({propsClick}) => {
         grandCard = {true}
         paraph={[propsEtape]}  
         reponse = {response}
-        enigme={propsEnigme}
+        enigme=''
         indice={propsIndice}
         nextStep={propsClick} />
     )
