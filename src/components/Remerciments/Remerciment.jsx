@@ -73,7 +73,7 @@ const Etape4 = () => {
     const classes = useStyles();
       
     const handleClick = () => {
-        download(cv, "tutu.pdf");
+        download(cv, "CV_Antoine_Doubinine.pdf");
     }
     return (
         <>
