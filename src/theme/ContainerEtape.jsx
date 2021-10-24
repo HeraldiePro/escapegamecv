@@ -160,7 +160,7 @@ const ContainerEtape = ({
                                     <ButtonCustom dataTestid="Submit" submit={true}  label="Valider ma réponse" />
                                 </form>
                                 {(validRep) ? <p data-testid="succes" className={classes.succes}>
-                                    <b>Bravo la réponse était bien <span>{response}</span> vous pouvez aller a etape suivante <span role="img" aria-label="sparke">✨</span></b>
+                                    <b>Bravo la réponse était bien <span>{response}</span> vous pouvez aller à l'étape suivante <span role="img" aria-label="sparke">✨</span></b>
                                 </p> : '' }
                             </CardContent>
                         </Card>

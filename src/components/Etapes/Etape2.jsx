@@ -12,7 +12,7 @@ public, pour ce faire j’ai fait le parcours classique du BAFA et direct après
 commencer à travailler pour une association pour les temps de périscolaire. J’avais d’ailleurs déjà à
 cœur de masteriser et d’initier mon public à différents jeux de société et/ou de stratégie.`
 
-const propsEnigme = `Déchiffrer le rébus suivant`
+const propsEnigme = `Déchiffrer le rébus suivant`
 
 const propsIndice = `le personnage dessinée est russe et pour le plateau il s’agit célèbre jeux de stratégie coréen.`
 
