@@ -30,7 +30,9 @@ admettre que ce domaine professionnel bien que très éloigné de mes valeurs fu
 expérience intéressante car elle m’a permis de développer mon contact clientèle en travaillant en
 caisse.`
 
-const propsEnigme = `Arthur et mathilde souhaite commander 2 menus mega Sunday ainsi qu’un cheeseburger chacun ils commande, règle ensemble et dispose d’une carte étudiant. Qu’elle somme devront -ils régler ?`
+const propsEnigme = `Arthur et mathilde souhaite commander 2 menus mega Sunday ainsi
+qu’un cheeseburger chacun ils commande, règle ensemble et dispose
+d’une carte étudiant. Qu’elle somme devront -ils régler ?`
 
 const propsIndice = `pour calculer facilement une réduction de 10% diviser par 10 le résultat initial ou bien d’aller
 sur le site du service publique et de faire une simulation de calcul`
