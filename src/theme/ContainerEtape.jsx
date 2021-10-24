@@ -91,7 +91,7 @@ const ContainerEtape = ({
     const classes = useStyles();
     const [errorRep, setErrorRep] = React.useState(false);
     const [validRep, setValidRep] = React.useState(false);
-    const [response, setResponse] = React.useState('');
+    const [responseState, setResponse] = React.useState('');
     const [countRep, setCountRep] = React.useState(0);
 
     const handleChange = (event) => {
@@ -99,10 +99,12 @@ const ContainerEtape = ({
     }
     
     const handleSubmit = (event) => {
+        console.log('countRep',countRep)
         setCountRep(countRep + 1)
-        
-        if(response.toLowerCase() === reponse 
-        || response.replace(',', '.') === reponse )
+        const rep = (reponse !== 'escape yourself') ? responseState.replace(/\s+/g, '') : responseState
+        console.log('rep',rep)
+        if(rep.toLowerCase() === reponse 
+        || rep.replace(',', '.') === reponse )
         {
             setValidRep(true)
             setErrorRep(false)
@@ -160,7 +162,7 @@ const ContainerEtape = ({
                                     <ButtonCustom dataTestid="Submit" submit={true}  label="Valider ma réponse" />
                                 </form>
                                 {(validRep) ? <p data-testid="succes" className={classes.succes}>
-                                    <b>Bravo la réponse était bien <span>{response}</span> vous pouvez aller à l'étape suivante <span role="img" aria-label="sparke">✨</span></b>
+                                    <b>Bravo la réponse était bien <span>{reponse}</span> vous pouvez aller à l'étape suivante <span role="img" aria-label="sparke">✨</span></b>
                                 </p> : '' }
                             </CardContent>
                         </Card>
