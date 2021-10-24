@@ -1,11 +1,19 @@
 import React from 'react'
 import ContainerEtape from '../../theme/ContainerEtape'
 import etape5img from '../../assets/images/etape5/etape5.png'
+import { makeStyles } from '@material-ui/core/styles'
 
+const useStyles = makeStyles(() => ({
+    img: {
+        'max-width': '800px',
+        'min-width': '300px'
+    }
+}));
 const ContainEtape5 = () => {
+    const classes = useStyles();
     return (
         <>
-            <img src={etape5img} alt="Text" />
+            <img src={etape5img} alt="Text" className={classes.img} />
         </>
     )
 }
