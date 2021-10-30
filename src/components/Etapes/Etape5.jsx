@@ -4,6 +4,7 @@ import etape5img from '../../assets/images/etape5/etape5.png'
 import { makeStyles } from '@material-ui/core/styles'
 import { Etape5Text } from '../../theme/TextElement'
 
+
 const useStyles = makeStyles(() => ({
     img: {
         'max-width': '800px',

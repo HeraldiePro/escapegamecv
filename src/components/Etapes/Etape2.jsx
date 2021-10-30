@@ -8,8 +8,8 @@ const Etape2Contain = () => {
     return <img src={rebut} alt="rebut" />
 }
 
-const response = "pédagogie"
 
+const response = "pédagogie"
 
 const Etape2 = ({propsClick}) => {
     return <ContainerEtape 

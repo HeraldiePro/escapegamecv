@@ -27,6 +27,9 @@ const Etape1Content = () => {
 
 const response = "24.3"
 
+
+const response = "24.3"
+
 const Etape1 = ({propsClick}) => {
     
     return (<ContainerEtape 
