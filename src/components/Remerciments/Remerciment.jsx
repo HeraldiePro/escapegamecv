@@ -6,7 +6,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles'
 import ButtonCustom from '../../theme/Button'
 import { colors } from '../../theme/variables';
-import cv from '../../assets/pdf/_Cv antoine doubinine animation escape game.pdf'
+import cv from '../../assets/pdf/cv_antoine.pdf'
 import GetAppIcon from '@material-ui/icons/GetApp';
 import { Remerciments } from '../../theme/TextElement'
 
@@ -74,7 +74,7 @@ const Etape4 = () => {
     const classes = useStyles();
       
     const handleClick = () => {
-        download(cv, "CV_Antoine.pdf");
+        download(cv, "CV_Antoine_Doubinine.pdf");
     }
     return (
         <>
