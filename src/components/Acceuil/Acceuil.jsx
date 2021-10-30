@@ -3,6 +3,7 @@ import { Grid , Button, Typography, Container } from '@material-ui/core';
 import {  Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { colors, gradient } from '../../theme/variables';
+import { AcceuilText } from '../../theme/TextElement'
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -32,14 +33,13 @@ const Acceuil = () =>{
             <Grid item xs>
                 <div data-testid="ContentAcceuil" className="content-acceuil">
                     <div data-testid="ContenuAcceuil" className="contenu-acceuil">
-                        <h1 data-testid="TitleAcceuil" className={classes.title}>Bienvenu sur mon parcour professionnel</h1>
+                        <h1 data-testid="TitleAcceuil" className={classes.title}>{AcceuilText.title}</h1>
                         <Container maxWidth="md">
                             <Typography data-testid="ParagraphAcceuil" className={classes.paragraph}>
-                                Vous pouvez dès a présent commencer le parcour en énigme de mon experience professionnel, 
-                                les énigmes ne sont pas trop dur ne vous inquiétez pas, jouer et apprennez a me connaitre <span role="img" aria-label="smile">😊</span> .
+                                {AcceuilText.description} <span role="img" aria-label="smile">😊</span> .
                             </Typography>
                             <Button data-testid="ButonAcceuil" className={classes.buttonTitle} component={ Link } to="/enigmes">
-                                Commencer le parcour
+                                {AcceuilText.button}
                             </Button> 
                         </Container>
                     </div>

@@ -8,6 +8,7 @@ import ButtonCustom from '../../theme/Button'
 import { colors } from '../../theme/variables';
 import cv from '../../assets/pdf/cv_antoine.pdf'
 import GetAppIcon from '@material-ui/icons/GetApp';
+import { Remerciments } from '../../theme/TextElement'
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -81,14 +82,14 @@ const Etape4 = () => {
                 <h1 style={{paddingTop: 15 }} data-testid="Etape3Title">Un grand merci a vous !</h1>
                 <Container maxWidth="lg" className={classes.align}>
                     <Typography className={classes.paragraph}>
-                        Phrase de remerciment
+                        {Remerciments.description}
                     </Typography>
                 </Container>
             </Typography>
             <div className={classes.container}>
                 <ButtonCustom 
                 dataTestid="TelechargerCv" 
-                label="Télécharger le CV" 
+                label={Remerciments.button} 
                 handleClick={handleClick}
                 startIcon={<GetAppIcon />} />
             </div>
