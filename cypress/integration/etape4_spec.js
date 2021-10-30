@@ -47,28 +47,24 @@ describe('Etapes 4:', function() {
     it('Test title',() => {
         cy.get('[data-testid=Title]')
         .should('be.visible')
-        .should('have.text', 'Formation ATL et stage en escape game')
     })
 
     it('Test p1',() => {
         cy.get('[data-testid=p1]')
         .should('be.visible')
-        .should('have.text', `Afin de me perfectionner j’ai choisi de participer à une formation à l’afpa de tours nord en tant\nqu’animateur en tourisme et loisir. Et c’est par ce biais que j’ai découvert l’univers de l’escape game\nj’ai donc procédé à un stage de 3 mois en entreprise, stage qui à été rémunéré au vus du travail que\nj’ai fourni durant une période de forte affluence.`)
     })
 
     it('Test h2',() => {
         cy.get('[data-testid=h2]')
         .should('be.visible')
-        .should('have.text', "L'énigme est donc la suivante")
     })
 
     it('Test enoncer',() => {
         cy.get('[data-testid=enoncer]')
         .should('be.visible')
-        .should('have.text', "Trouver les 2 mots (un par ligne) afin d'obtenir le code secret  ")
     })
 
-    it('Test ContentCard',() => {
+    it.only('Test ContentCard',() => {
         cy.get('[data-testid=ContentCard]')
         .should('be.visible')
     })
@@ -112,7 +108,6 @@ describe('Etapes 4:', function() {
         cy
         .get("[data-testid=textError]")
         .should('be.visible')
-        .should('have.text','Indice : Il s’agit d’un code en morse 😊.')
     })
 
     it('Good answer',() => {
@@ -133,6 +128,5 @@ describe('Etapes 4:', function() {
 
         cy.get('[data-testid=Title]')
         .should('be.visible')
-        .should('have.text','Extra pour 221 b')
     })
 });

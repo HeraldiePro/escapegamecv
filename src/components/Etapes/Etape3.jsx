@@ -9,6 +9,10 @@ import {
 import SvgIcon from '@material-ui/core/SvgIcon';
 import ContainerEtape from '../../theme/ContainerEtape'
 import { colors } from '../../theme/variables';
+import { Etape3Text } from '../../theme/TextElement'
+
+
+
 function RunIconIcon(props) {
     return (
       <SvgIcon {...props}>
@@ -37,30 +41,16 @@ const ContainEtape3 = () => {
     )
 }
 
-const title = "Animation village vacances"
 const response = "sport"
-const propsEtape = `De fil en aiguille j’ai souhaité expérimenter d’animer des public dans des structures différentes avec
-des public plus varié, j’ai donc eu la chance de travailler en saison pour un village vacance 4 étoile
-situé sur la côte d’azur du nom très rigolo de TourisTra.`
-
-const propsEtape2 = `Au cours de cette expérience j’ai eu l’occasion de mettre à profit mes compétences en théâtre en
-montant sur scène (et parfois même de faire du travestie hihi) d’apprendre des rudiments de
-prestidigitation, d’improviser un jeu de piste avec pour élément principal une bobine de laine et aussi
-d’apprendre des chorégraphie (pour mon plus grand plaisir) pour des animations avec les enfants qui
-avait lieu 5 jours sur 7 (le principe de mini si vous connaissez).`
-
-const propsEnigme = ` Veuillez trouver parmi la liste ci-dessous et en vous aidant du texte ci-dessus l’intrus dans cette liste d’activités `
-
-const propsIndice = ``
 
 const Etape3 = ({propsClick}) => {
     return (<ContainerEtape 
     etapeComponent={<ContainEtape3 />}
-    title={title}
-    paraph={[propsEtape,propsEtape2]}  
+    title={Etape3Text.title}
+    paraph={[Etape3Text.descriptionParaph1,Etape3Text.descriptionParaph2]}  
     reponse = {response}
-    enigme={propsEnigme}
-    indice={propsIndice}
+    enigme={Etape3Text.enigme}
+    indice={Etape3Text.indice}
     nextStep={propsClick} />)
 }
 
